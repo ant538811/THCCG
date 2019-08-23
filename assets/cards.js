@@ -1,6 +1,5 @@
 // Instantiating card lists and pack lists
 var cardList = [];
-// var packNames = ["EOSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "TD", "DDC", "LoLK", "WBaWC"];
 var EOSD = [];
 var PCB = [];
 var IN = [];
@@ -45,12 +44,10 @@ var Agni_Shrine = new card("Agni Shrine", "Magical", "Spell", "EOSD12", 6, null,
 var Angered_Tome = new card("Angered Tome", "Magical", "Minion", "EOSD13", 4, 3, 3, "Rare 2", "Legacy: Check your deck. Add one spell that costs 5 or more to your hand.");
 
 for (i = 0; i < cardList.length; i++){
-	// for (j = 0; j < packNames.length; j++){
-		if (cardList[i].CardID.includes("EOSD")){
-			EOSD.push(cardList[i]);
-		}
+	if (cardList[i].CardID.includes("EOSD")){
+		EOSD.push(cardList[i]);
 	}
-// }
+}
 
 
 
@@ -66,7 +63,6 @@ function openPack(Pack){
 		}
 		packCards.push(tempArr[Math.floor(Math.random()*tempArr.length)]);
 	}
-	// console.log(Pack);
 	return packCards;
 }
 
@@ -82,11 +78,5 @@ function pickRarity(){
 		weightedSum += rarityWeighting[rarityIndex];
 		rarityIndex++;
 	}
-	// if (weightedSum >= rand){
-		return(rarityList[rarityIndex-1]);
-	// }
+	return(rarityList[rarityIndex-1]);
 }
-$("#first").click(function(){
-	console.log(openPack(EOSD));
-	// console.log("Hello");
-});
