@@ -27,8 +27,8 @@ function card(Name, Faction, Classification, CardID, Cost, Offense, Durability, 
 	cardList.push(this);
 }
 // var 
-var Ingenuity = new card("Ingenuity", "Arcane", "BASE-Skill", "BASIC-ARCANE", 2, null, null, "Rare EX", "Take 1 damage. Place one counter on this card. Spells in your hand have costs reduced by the number of counters on this card (Costs cannot go below 0).");
-// var 
+var Ingenuity = new card("Ingenuity", "Arcane", "BASE-Skill", "BASIC-ARCANE", 2, null, null, "Rare EX", "Take 1 damage. Increase your faith counter by 1. Spells in your hand have costs reduced by the value of your faith counter (Costs cannot go below 0).");
+var Spirit_Cycle = new card("Spirit Cycle", "Spirit", "BASE-Skill", "BASE-SPIRIT", 1, null, null, "Rare EX", "Decrease your faith counter by 1 to invoke a 1/1 'Lost Spirit' minion. Increase your faith counter by 1 when a minion is vanquished, unless it was 'Lost Spirit'.");
 
 var Lightless = new card("Lightless", "Wicked", "Skill", "EOSD01", 3, null, null, "Rare 2", "Grant one of your minions 'Hidden'.");
 var Inner_Strength = new card("Inner Strength", "Adept", "Skill", "EOSD03", 2, null, null, "Rare 3", "Grant one of your minions +1/+1.");
@@ -36,8 +36,8 @@ var Arcane_Charge = new card("Arcane Charge", "Arcane", "Skill", "EOSD04", 4, nu
 var Time_Stop = new card("Time, Stop!", "Adept", "Skill", "EOSD05", 10, null, null, "Rare EX", "Skip your opponent's next turn. You start with 0 mana on your next turn.");
 var Scarlet_Charisma = new card("Scarlet Charisma", "Wicked", "Skill", "EOSD06", 7, null, null, "Rare 6", "Grant all your minions +1/+1.");
 var Common_Fairy = new card("Common Fairy", "Common", "Minion", "EOSD07", 1, 1, 2, "Rare 1", "");
-var Indiscriminate = new card("Indiscriminate", "Adept", "Spell", "EOSD08", 7, null, null, "Rare 5", "Inflict: 4 damage to all minions.");
-var Moonlight_Ray = new card("Moonlight Ray", "Wicked", "Spell", "EOSD09", 1, null, null, "Rare 1", "Inflict: damage to your opponent equal to one the attack stat of your 'Hidden' minions.");
+var Indiscriminate = new card("Indiscriminate", "Adept", "Spell", "EOSD08", 7, null, null, "Rare 5", "Inflict 4 damage to all minions.");
+var Moonlight_Ray = new card("Moonlight Ray", "Wicked", "Spell", "EOSD09", 1, null, null, "Rare 1", "Inflict damage to your opponent equal to the attack stat of one of your 'Hidden' minions.");
 var Perfect_Freeze = new card("Perfect Freeze", "Magical", "Spell", "EOSD10", 8, null, null, "Rare 4", "No minions can attack next turn.");
 var Frost_Columns = new card("Frost Columns", "Common", "Spell", "EOSD11", 3, null, null, "Rare 4", "Invoke: two 0/2 'Ice Statues' with 'Guardian'.");
 var Agni_Shrine = new card("Agni Shrine", "Magical", "Spell", "EOSD12", 6, null, null, "Rare 3", "Inflict: 5 damage to your opponent. Check your deck. Add one 'Agni Shrine' to your hand.");
@@ -58,7 +58,7 @@ function openPack(Pack){
 		var tempArr = [];
 		for (j = 0; j < Pack.length; j++){
 			if (Pack[j].Rarity == chosenRarity){
-				tempArr.push(Pack[j].Name);
+				tempArr.push(Pack[j]);
 			}
 		}
 		packCards.push(tempArr[Math.floor(Math.random()*tempArr.length)]);
